@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity(name = "tb_card")
 public class Card {
@@ -18,7 +18,7 @@ public class Card {
     @Column(unique = true)
     private String number;
 
-    @Column(precision = 2, scale = 13)
+    @Column(name = "available_limit",precision = 2, scale = 13)
     private BigDecimal limit;
 
     public Long getId() {

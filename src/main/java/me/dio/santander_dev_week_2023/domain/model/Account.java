@@ -2,7 +2,11 @@ package me.dio.santander_dev_week_2023.domain.model;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity(name = "tb_account")
 public class Account {
@@ -19,7 +23,7 @@ public class Account {
     @Column(precision = 2, scale = 13)
     private BigDecimal balance;
 
-    @Column(precision = 2, scale = 13)
+    @Column(name = "available_limit", precision = 2, scale = 13)
     private BigDecimal limit;
 
     public Long getId() {
