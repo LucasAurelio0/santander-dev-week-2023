@@ -1,5 +1,5 @@
 package me.dio.santander_dev_week_2023.domain.model;
-import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -26,12 +26,11 @@ public class User {
     private Card card;
 
     @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    private ArrayList<Feature> features;
+    private List<Feature> features;
 
     @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-    private ArrayList<News> news;
+    private List<News> news;
 
-    private String email;
 
     public Long getId() {
         return id;
@@ -69,30 +68,21 @@ public class User {
         return this;
     }
 
-    public ArrayList<Feature> getFeatures() {
+    public List<Feature> getFeatures() {
         return features;
     }
 
-    public User setFeatures(ArrayList<Feature> features) {
+    public User setFeatures(List<Feature> features) {
         this.features = features;
         return this;
     }
 
-    public ArrayList<News> getNews() {
+    public List<News> getNews() {
         return news;
     }
 
-    public User setNews(ArrayList<News> news) {
+    public User setNews(List<News> news) {
         this.news = news;
-        return this;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public User setEmail(String email) {
-        this.email = email;
         return this;
     }
 
